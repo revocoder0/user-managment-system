@@ -1,0 +1,35 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">View User</li>
+  </ol>
+</nav>
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      {{!-- <th scope="col">#</th> --}}
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col" class="text-center">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each rows}}
+    <tr>
+      {{!-- <th scope="row">{{this.id}}</th> --}}
+      <td>{{this.first_name}}</td>
+      <td>{{this.last_name}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.phone}}</td>
+      <td class="text-center">
+          <a href="/" type="button" class="btn btn-light btn-small"><i class="bi bi-eye-slash">Close</i></a>
+          <a href="/edit-user/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil">Edit</i></a>
+          <a href="/{{this.id}}" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x">Delete</i></a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
